@@ -1,33 +1,4 @@
-from datamax_printer import DPLPrinter
-
-print('---')
-import os, sys
-import win32print
 import win32con
-
-printer_name = win32print.GetDefaultPrinter()
-#
-# raw_data could equally be raw PCL/PS read from
-#  some print-to-file operation
-# #
-# if sys.version_info >= (3,):
-#     raw_data = bytes("This is a test", "utf-8")
-# else:
-#     raw_data = "This is a test"
-#
-# hPrinter = win32print.OpenPrinter(printer_name)
-# try:
-#     hJob = win32print.StartDocPrinter(hPrinter, 1, ("test of raw data", None, "RAW"))
-#     try:
-#         win32print.StartPagePrinter(hPrinter)
-#         win32print.WritePrinter(hPrinter, raw_data)
-#         win32print.EndPagePrinter(hPrinter)
-#     finally:
-#         win32print.EndDocPrinter(hPrinter)
-# finally:
-#     win32print.ClosePrinter(hPrinter)
-
-# exit()
 import win32ui as w
 
 
@@ -36,16 +7,6 @@ def start_document():
     doc.CreatePrinterDC()
     doc.StartDoc('My Python Document')
     return doc
-
-
-text = """
-Батика premium brew 1 \n
-Батика premium brew 10 \n
-Батика premium brew 100 \n
-Батика premium brew 1000 \n
-Батика premium brew 1000 \n
-
-"""
 
 
 def getfontsize(dc, PointSize):
