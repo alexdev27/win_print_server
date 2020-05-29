@@ -16,7 +16,7 @@ arr = [
 
 def print_steakhouse_order(data):
     # # print(data)
-    order_line = data.pop(0)
+    order_line = '  ' + data.pop(0)
     doc = start_document()
     # # header of the order
     apply_font(doc, 'Consolas', 12)
@@ -47,7 +47,7 @@ def _process_strings(strings, doc):
         ready_strings = _split_long_string(MAX_ACCEPTABLE_CHARS, _str)
         for num, val in enumerate(ready_strings, 1):
             is_need_offset = val[0]
-            string = val[1]
+            string = ' ' + val[1]
             x_offset = CUSTOM_X_OFFSET if is_need_offset else NORMAL_X_OFFSET
             attach_text(doc, x_offset, y_offset, string)
             y_offset += INCREMENTAL_Y_OFFSET
